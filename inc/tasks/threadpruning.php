@@ -9,6 +9,9 @@ function task_threadpruning($task)
 	global $db, $mybb, $lang, $cache;
 	$lang->load("pruneoldthreads");
 
+	require_once MYBB_ROOT."inc/class_moderation.php";
+	$moderation = new Moderation();
+
 	// Find only the forums that have pruning enabled
 	$query = $db->simple_select("forums", "fid, daysprune", "enablepruning = '1'");
 	while($forums = $db->fetch_array($query))
@@ -32,9 +35,6 @@ function task_threadpruning($task)
 		$query2 = $db->simple_select("threads", "tid", $sql_where);
 		while($thread = $db->fetch_array($query2))
 		{
-			require_once MYBB_ROOT."inc/class_moderation.php";
-			$moderation = new Moderation();
-
 			$moderation->delete_thread($thread['tid']);
 		}
 	}
