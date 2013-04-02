@@ -25,7 +25,7 @@ function pruneoldthreads_info()
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",
 		"version"			=> "1.0",
-		"guid"				=> "",
+		"guid"				=> "ea251e0150d6cc38a96eb878538cfd5e",
 		"compatibility"		=> "16*"
 	);
 }
