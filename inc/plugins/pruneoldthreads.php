@@ -38,8 +38,8 @@ function pruneoldthreads_install()
 	global $db, $cache;
 	pruneoldthreads_uninstall();
 
-	$db->add_column("forums", "enablepruning", "int(1) NOT NULL default '0'");
-	$db->add_column("forums", "daysprune", "int(100) NOT NULL default '240'");
+	$db->add_column("forums", "enablepruning", "tinyint(1) NOT NULL default '0'");
+	$db->add_column("forums", "daysprune", "smallint unsigned NOT NULL default '240'");
 
 	$cache->update_forums();
 }
