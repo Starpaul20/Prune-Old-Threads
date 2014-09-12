@@ -112,7 +112,7 @@ function pruneoldthreads_deactivate()
 function pruneoldthreads_forum($row)
 {
 	global $db, $mybb, $lang, $form_container, $forum_data, $form;
-	$lang->load("pruneoldthreads");
+	$lang->load("pruneoldthreads", true);
 
 	if($mybb->input['module'] == "forum-management" AND $mybb->input['action'] == 'edit' OR $mybb->input['action'] == 'add')
 	{
