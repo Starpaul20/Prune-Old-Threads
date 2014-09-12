@@ -79,7 +79,7 @@ function pruneoldthreads_activate()
 
 	// Inserts thread pruning task
 	require_once MYBB_ROOT."inc/functions_task.php";
-	$subscription_insert = array(
+	$pruning_insert = array(
 		"title"			=> "Thread Pruning",
 		"description"	=> "Automatically prunes old threads based on criteria set in the Forum Managment section.",
 		"file"			=> "threadpruning",
@@ -93,8 +93,8 @@ function pruneoldthreads_activate()
 		"locked"		=> 0
 	);
 
-	$subscription_insert['nextrun'] = fetch_next_run($subscription_insert);
-	$db->insert_query("tasks", $subscription_insert);
+	$pruning_insert['nextrun'] = fetch_next_run($pruning_insert);
+	$db->insert_query("tasks", $pruning_insert);
 }
 
 // This function runs when the plugin is deactivated.
