@@ -19,7 +19,7 @@ function task_threadpruning($task)
 		$and = "";
 		$sql_where = "";
 
-		if(intval($forums['daysprune']) > 0)
+		if((int)$forums['daysprune'] > 0)
 		{
 			$postdate = $forums['daysprune']*60*60*24;
 
