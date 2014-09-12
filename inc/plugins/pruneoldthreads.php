@@ -18,9 +18,12 @@ $plugins->add_hook("admin_forum_management_add_commit", "pruneoldthreads_forum_c
 // The information that shows up on the plugin manager
 function pruneoldthreads_info()
 {
+	global $lang;
+	$lang->load("pruneoldthreads", true);
+
 	return array(
-		"name"				=> "Prune Old Threads",
-		"description"		=> "Allows you to prune old threads from specific forums.",
+		"name"				=> $lang->pruneoldthreads_info_name,
+		"description"		=> $lang->pruneoldthreads_info_desc,
 		"website"			=> "http://galaxiesrealm.com/index.php",
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",

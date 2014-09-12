@@ -4,6 +4,9 @@
  * Copyright 2013 Starpaul20
  */
 
+$l['pruneoldthreads_info_name'] = "Prune Old Threads";
+$l['pruneoldthreads_info_desc'] = "Allows you to prune old threads from specific forums.";
+
 $l['pruning_options'] = "Pruning Options";
 $l['enable_pruning'] = "Yes, enable pruning in this forum";
 $l['enable_pruning_desc'] = "If enabled, any threads that haven't been posted in for the amount of time specified below will be deleted. <strong>Entering 0 will prune all threads.</strong> Sticky threads are not affected.";
