@@ -39,8 +39,21 @@ function pruneoldthreads_install()
 	global $db, $cache;
 	pruneoldthreads_uninstall();
 
-	$db->add_column("forums", "enablepruning", "tinyint(1) NOT NULL default '0'");
-	$db->add_column("forums", "daysprune", "smallint unsigned NOT NULL default '240'");
+	switch($db->type)
+	{
+		case "pgsql":
+			$db->add_column("forums", "enablepruning", "smallint NOT NULL default '0'");
+			$db->add_column("forums", "daysprune", "smallint NOT NULL default '240'");
+			break;
+		case "sqlite":
+			$db->add_column("forums", "enablepruning", "tinyint(1) NOT NULL default '0'");
+			$db->add_column("forums", "daysprune", "smallint NOT NULL default '240'");
+			break;
+		default:
+			$db->add_column("forums", "enablepruning", "tinyint(1) NOT NULL default '0'");
+			$db->add_column("forums", "daysprune", "smallint unsigned NOT NULL default '240'");
+			break;
+	}
 
 	$cache->update_forums();
 }
