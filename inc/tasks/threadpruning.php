@@ -7,7 +7,7 @@
 function task_threadpruning($task)
 {
 	global $db, $mybb, $lang, $cache;
-	$lang->load("pruneoldthreads");
+	$lang->load("pruneoldthreads", true);
 
 	require_once MYBB_ROOT."inc/class_moderation.php";
 	$moderation = new Moderation();
