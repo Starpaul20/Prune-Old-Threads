@@ -134,7 +134,7 @@ function pruneoldthreads_forum($row)
 		{
 			$pruning_options = array(
 			$form->generate_check_box('enablepruning', 1, $lang->enable_pruning."<br />\n<small>{$lang->enable_pruning_desc}</small>", array('checked' => $forum_data['enablepruning'], 'id' => 'enablepruning')),
-			$lang->days_prune."<br />\n".$form->generate_text_box('daysprune', $forum_data['daysprune'], array('checked' => $forum_data['daysprune'], 'id' => 'daysprune', 'class' => 'field50')). $lang->days
+			$lang->days_prune."<br />\n".$form->generate_numeric_field('daysprune', $forum_data['daysprune'], array('checked' => $forum_data['daysprune'], 'id' => 'daysprune', 'class' => 'field50', 'min' => 0)). $lang->days
 			);
 
 			$form_container->output_row($lang->pruning_options, "", "<div class=\"forum_settings_bit\">".implode("</div><div class=\"forum_settings_bit\">", $pruning_options)."</div>");
