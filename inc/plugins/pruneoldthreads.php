@@ -148,8 +148,8 @@ function pruneoldthreads_forum_commit()
 {
 	global $db, $mybb, $cache, $fid;
 	$update_array = array(
-		"enablepruning" => (int)$mybb->input['enablepruning'],
-		"daysprune" => (int)$mybb->input['daysprune']
+		"enablepruning" => $mybb->get_input('enablepruning', MyBB::INPUT_INT),
+		"daysprune" => $mybb->get_input('daysprune', MyBB::INPUT_INT)
 	);
 
 	$db->update_query("forums", $update_array, "fid='{$fid}'");
