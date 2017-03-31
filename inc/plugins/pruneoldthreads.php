@@ -156,5 +156,3 @@ function pruneoldthreads_forum_commit()
 
 	$cache->update_forums();
 }
-
-?>

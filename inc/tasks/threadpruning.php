@@ -41,4 +41,3 @@ function task_threadpruning($task)
 
 	add_task_log($task, $lang->task_pruning_ran);
 }
-?>

@@ -15,5 +15,3 @@ $l['days_prune'] = "Delete threads older than:";
 $l['days'] = "days";
 
 $l['task_pruning_ran'] = "The thread pruning task successfully ran.";
-
-?>
