@@ -1,3 +1,7 @@
+1.2 (June 27th, 2021)
+- Adding License file
+- Removed PHP closing tags
+
 1.1 (March 5th, 2015)
 - Added PostgreSQL and SQLite support
 - Using generate_numeric_field function
