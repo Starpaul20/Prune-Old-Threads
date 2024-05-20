@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-Prune Old Threads (1.2) for MyBB 1.8
+Prune Old Threads (1.3) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2013
 License: GPL
