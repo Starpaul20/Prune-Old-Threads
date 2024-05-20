@@ -95,7 +95,7 @@ function pruneoldthreads_activate()
 	require_once MYBB_ROOT."inc/functions_task.php";
 	$pruning_insert = array(
 		"title"			=> "Thread Pruning",
-		"description"	=> "Automatically prunes old threads based on criteria set in the Forum Managment section.",
+		"description"	=> "Automatically prunes old threads based on criteria set in the Forum Management section.",
 		"file"			=> "threadpruning",
 		"minute"		=> "0",
 		"hour"			=> "0",
@@ -130,6 +130,16 @@ function pruneoldthreads_forum($row)
 
 	if($mybb->input['module'] == "forum-management" AND $mybb->input['action'] == 'edit' OR $mybb->input['action'] == 'add')
 	{
+		if(empty($forum_data['enablepruning']))
+		{
+			$forum_data['enablepruning'] = 0;
+		}
+
+		if(empty($forum_data['daysprune']))
+		{
+			$forum_data['daysprune'] = 0;
+		}
+
 		if($row['label_for'] == 'linkto')
 		{
 			$pruning_options = array(
